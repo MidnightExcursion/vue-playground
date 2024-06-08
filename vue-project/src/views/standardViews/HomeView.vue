@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link to="/game-settings">Game Settings</router-link>
+    <router-link to="/components">Game Settings</router-link>
   </div>
 </template>
 

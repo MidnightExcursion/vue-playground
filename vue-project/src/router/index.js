@@ -10,7 +10,7 @@ const routes = [
     component: DefaultLayout,
     children: [
       {
-        path: '/home',
+        path: '/',
         name: 'Home',
         component: () => import('@/views/standardViews/HomeView.vue')
       },
@@ -23,7 +23,7 @@ const routes = [
       {
         path: '/game-settings',
         name: 'Game Settings',
-        component: () => import('@/components/interface/GameSettings.vue')
+        component: () => import('@/views/componentViews/ComponentView.vue')
       }
     ]
   }
