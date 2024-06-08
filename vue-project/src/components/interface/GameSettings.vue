@@ -1,21 +1,21 @@
 <template>
   <div class="game-settings">
     <div>
-      <button @click="toggleTimeOptions">
-        {{ selectedTime || 'Time' }}
+      <button class = "options-button" @click="toggleTimeOptions">
+        {{ selectedTime || 'Duration' }}
       </button>
       <div v-if="showTimeOptions" class="options">
-        <button v-for="option in timeOptions" :key="option" @click="selectTime(option)">
+        <button v-for="option in timeOptions" :key="option" class = "topic-button" @click="selectTime(option)">
           {{ option }}
         </button>
       </div>
     </div>
     <div>
-      <button @click="toggleTypeOptions">
-        {{ selectedType || 'Type' }}
+      <button class = "options-button" @click="toggleTypeOptions">
+        {{ selectedType || 'Topic' }}
       </button>
       <div v-if="showTypeOptions" class="options">
-        <button v-for="option in typeOptions" :key="option" @click="selectType(option)">
+        <button v-for="option in typeOptions" :key="option" class = "topic-button" @click="selectType(option)">
           {{ option }}
         </button>
       </div>
@@ -65,7 +65,86 @@ export default {
 .options {
   margin-top: 5px;
 }
-button {
-  margin: 5px;
+
+.options-button {
+    /* STRUCTURAL */
+    justify-self: center;
+    min-width: 255px;
+    height: 60px;
+    margin: 1px;
+    padding: 2px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+
+    /* COLORS */
+    background-color: white;
+    color: black;
+    border-color: black;
+    
+    /* TEXT */
+    letter-spacing: 1.2px;
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.options-button:hover {
+    /* COLORS */
+    background-color: grey;
+}
+
+.topic-button {
+  /* STRUCTURAL */
+  justify-self: center;
+    min-width: 255px;
+    height: 60px;
+    margin: 1px;
+    padding: 2px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+
+    /* COLORS */
+    background-color: white;
+    color: black;
+    border-color: black;
+    
+    /* TEXT */
+    letter-spacing: 1.2px;
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.topic-button:hover {
+  background-color: var(--unaligned-practice-settings-button-hover);
+}
+
+@media screen and (max-width: 700px) {
+    .topic-options-button {
+        /* STRUCTURAL */
+        min-width: 150px;
+        height: 30px;
+        
+        /* TEXT */
+        font-size: 16px;
+    }
+
+    .duration-options-button {
+        /* STRUCTURAL */
+        min-width: 150px;
+        height: 30px;
+        
+        /* TEXT */
+        font-size: 16px;
+    }
+
+    .submit-session-options-button {
+        /* STRUCTURAL */
+        min-width: 150px;
+        height: 30px;
+        
+        /* TEXT */
+        font-size: 16px;
+    }
 }
 </style>
