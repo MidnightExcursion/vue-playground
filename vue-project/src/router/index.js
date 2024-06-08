@@ -1,8 +1,8 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router'
 
-import DefaultLayout from '@/views/DefaultLayout.vue';
+import DefaultLayout from '@/views/DefaultLayout.vue'
 
-import ComponentView from '@/views/componentViews/ComponentView.vue';
+import ComponentView from '@/views/componentViews/ComponentView.vue'
 
 const routes = [
   {
@@ -10,24 +10,24 @@ const routes = [
     component: DefaultLayout,
     children: [
       {
-        path: '/',
+        path: '',
         name: 'Home',
         component: () => import('@/views/standardViews/HomeView.vue')
-      },
-    ],
+      }
+    ]
   },
   {
     path: '/components',
     component: ComponentView,
     children: [
       {
-        path: '/game-settings',
+        path: 'game-settings',
         name: 'Game Settings',
-        component: () => import('@/views/componentViews/ComponentView.vue')
+        component: () => import('@/components/interface/GameSettings.vue')
       }
     ]
   }
-];
+]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
